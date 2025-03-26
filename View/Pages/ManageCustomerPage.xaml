@@ -9,6 +9,6 @@
       Title="ManageCustomerPage">
 
     <Grid>
-        
+        <Grid Background="White"/>
     </Grid>
 </Page>

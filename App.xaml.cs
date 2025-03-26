@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BookMaster.Model;
 using System.Windows;
 
 namespace BookMaster
@@ -13,5 +8,7 @@ namespace BookMaster
     /// </summary>
     public partial class App : Application
     {
+        //Создаем контекс данных.
+        public static BookMasterEntities contex = new BookMasterEntities();
     }
 }

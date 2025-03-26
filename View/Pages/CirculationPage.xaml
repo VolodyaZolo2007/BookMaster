@@ -9,6 +9,6 @@
       Title="CirculationPage">
 
     <Grid>
-        
+        <Grid Background="Blue"/>
     </Grid>
 </Page>

@@ -1,17 +1,7 @@
-﻿using System;
+﻿using BookMaster.Model;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BookMaster.View.Pages
 {
@@ -20,9 +10,24 @@ namespace BookMaster.View.Pages
     /// </summary>
     public partial class BrowseCatalogPage : Page
     {
+        private List<BookAuthor> _bookAuthors = App.contex.BookAuthor.ToList();
+
+
         public BrowseCatalogPage()
         {
             InitializeComponent();
+
+            BookAuthorLv.ItemsSource = _bookAuthors;
+        }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            BookAuthorLv.ItemsSource = _bookAuthors.Where(bookAuthor => bookAuthor.Book.Title.ToLower().Contains(SearchByBookTitleNametb.Text.ToLower()) && bookAuthor.Author.Name.ToLower().Contains(SearchByAuthorNametb.Text.ToLower()));
         }
     }
 }

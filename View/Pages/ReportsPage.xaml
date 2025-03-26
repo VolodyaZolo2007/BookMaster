@@ -9,6 +9,6 @@
       Title="ReportsPage">
 
     <Grid>
-        
+        <Grid Background="Orange"/>
     </Grid>
 </Page>
